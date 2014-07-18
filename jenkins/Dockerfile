@@ -1,4 +1,4 @@
-FROM bradegler/java
+FROM bradegler/java7
 MAINTAINER Brad Egler "begler@gmail.com"
 
 RUN echo deb http://pkg.jenkins-ci.org/debian binary/ > /etc/apt/sources.list.d/jenkins.list
