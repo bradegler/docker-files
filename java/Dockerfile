@@ -1,0 +1,9 @@
+FROM bradegler/base
+MAINTAINER Brad Egler "begler@gmail.com"
+
+RUN echo oracle-java7-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections
+RUN add-apt-repository -y ppa:webupd8team/java
+RUN apt-get update
+RUN apt-get -yq install oracle-java7-installer oracle-java7-set-default
+
+CMD ["/bin/bash"]

@@ -1,0 +1,12 @@
+* text=input
+
+*.js     text
+*.hbs    text
+*.html   text
+*.scss   text
+*.json   text
+*.java   text
+*.gradle text
+
+*.gz binary
+*.png binary
