@@ -2,6 +2,8 @@
 
 Consolidated collection of docker containers I've built or use.
 
+Serves as source for automated builds at https://hub.docker.com/u/bradegler/
+
 ## Available Containers
 
 * base
