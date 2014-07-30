@@ -13,3 +13,4 @@ Serves as source for automated builds at https://hub.docker.com/u/bradegler/
 * rabbitmq
 * mongodb
 * redis
+* go (Development Environment)
