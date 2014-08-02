@@ -1,7 +1,7 @@
 FROM bradegler/base
 
 ENV GOPATH /data
-ENV PATH /usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+ENV PATH .:/usr/local/go/bin:$PATH
 
 VOLUME /data
 
