@@ -12,7 +12,7 @@ ENV HOME /var/lib/jenkins
 WORKDIR /var/lib/jenkins
 ADD run_jenkins.sh /usr/share/jenkins/run_jenkins.sh
 
-VOLUME /var/lib/jenkins
+VOLUME /var/lib/jenkins-jobs
 
 EXPOSE 8080
 CMD ["/usr/share/jenkins/run_jenkins.sh"]
