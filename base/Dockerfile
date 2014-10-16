@@ -17,4 +17,8 @@ RUN apt-get -yq install python python-dev python-pip python-virtualenv
 # Quick clean-up to reduce the size of this image
 RUN apt-get clean
 
+# Correct the timezone to eastern
+RUN rm /etc/localtime
+RUN ln -sf /usr/share/zoneinfo/America/New_York /etc/localtime
+
 CMD ["/bin/bash"]
