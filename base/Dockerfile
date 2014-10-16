@@ -25,7 +25,7 @@ RUN apt-get -yq install python python-dev python-pip python-virtualenv git-svn s
 RUN apt-get clean
 
 # Correct the timezone to eastern
-RUN rm /etc/localtime
-RUN ln -sf /usr/share/zoneinfo/America/New_York /etc/localtime
+RUN echo "America/New_York" tee /etc/timezone
+RUN dpkg-reconfigure --frontend noninteractive tzdata
 
 CMD ["/bin/bash"]
