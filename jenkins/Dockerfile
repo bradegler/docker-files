@@ -7,6 +7,8 @@ RUN apt-get -yq update && apt-get -yq upgrade
 RUN apt-get -yq install jenkins=`apt-cache madison jenkins | head -1 | cut -d \| -f 2 | tr -d ' '`
 #RUN apt-get -yq install jenkins-cli
 
+RUN usermod -a -G dcuser jenkins
+
 USER jenkins
 ENV HOME /var/lib/jenkins
 WORKDIR /var/lib/jenkins
