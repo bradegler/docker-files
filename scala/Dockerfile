@@ -14,7 +14,7 @@ RUN wget http://downloads.typesafe.com/scala/2.11.4/scala-2.11.4.tgz && \
     mv scala-2.11.4 /usr/local/lib/
 
 RUN wget https://dl.bintray.com/sbt/debian/sbt-0.13.6.deb && \
-    dpkg -i sbt-0.13.6.deb &&
+    dpkg -i sbt-0.13.6.deb && \
     rm sbt-0.13.6.deb
 
 
