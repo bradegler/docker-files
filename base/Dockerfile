@@ -19,7 +19,7 @@ RUN dpkg-divert --local --rename --add /sbin/initctl && rm -f /sbin/initctl && l
 
 # Install some stuff I want by default
 RUN apt-get -yq install git vim wget curl build-essential software-properties-common python-software-properties
-RUN apt-get -yq install python python-dev python-pip python-virtualenv git-svn subversion mercurial
+RUN apt-get -yq install python python-dev python-pip python-virtualenv git-svn subversion mercurial unzip zip
 
 # Quick clean-up to reduce the size of this image
 RUN apt-get clean
