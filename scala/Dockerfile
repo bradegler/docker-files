@@ -17,5 +17,6 @@ RUN wget https://dl.bintray.com/sbt/debian/sbt-0.13.6.deb && \
     dpkg -i sbt-0.13.6.deb && \
     rm sbt-0.13.6.deb
 
+VOLUME /data
 
 CMD ["/bin/bash"]
