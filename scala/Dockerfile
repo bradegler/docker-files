@@ -18,5 +18,9 @@ RUN wget https://dl.bintray.com/sbt/debian/sbt-0.13.6.deb && \
     rm sbt-0.13.6.deb
 
 VOLUME /data
+WORKDIR /data
+
+# Default activator server port
+EXPOSE 9000
 
 CMD ["/bin/bash"]
