@@ -3,11 +3,6 @@ MAINTAINER Brad Egler "begler@gmail.com"
 
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN mkdir -p /home/dcuser && \
-    groupadd -r dcuser -g 433 && \
-    useradd -u 431 -r -g dcuser -d /home/dcuser -s /sbin/nologin -c "Docker image user" dcuser && \
-    chown -R dcuser:dcuser /home/dcuser
-
 # Fix the locale
 RUN localedef -v -c -i en_US -f UTF-8 en_US.UTF-8 || :
 # Fix initctl, in case it hasn't been fixed already
@@ -19,7 +14,7 @@ RUN echo "America/New_York" tee /etc/timezone && dpkg-reconfigure --frontend non
 # apt-get update because we _do_ need it :(
 RUN apt-get -yq update && apt-get -yq install \
     git vim wget curl build-essential software-properties-common python-software-properties \
-    python python-dev python-pip python-virtualenv git-svn subversion mercurial unzip zip && \
-    apt-get clean
+    python python-dev python-pip python-virtualenv git-svn subversion mercurial unzip zip procps \
+    && apt-get clean
 
 CMD ["/bin/bash"]
