@@ -18,4 +18,6 @@ RUN apt-get -yq update && apt-get -yq install \
     python-setuptools procps \
     && apt-get clean
 
+RUN easy_install supervisor
+
 CMD ["/bin/bash"]
