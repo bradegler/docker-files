@@ -15,9 +15,7 @@ RUN echo "America/New_York" tee /etc/timezone && dpkg-reconfigure --frontend non
 RUN apt-get -yq update && apt-get -yq install \
     git vim wget curl build-essential software-properties-common python-software-properties \
     python python-dev python-pip python-virtualenv git-svn subversion mercurial unzip zip procps \
-    python-setuptools procps \
+    procps supervisor \
     && apt-get clean
-
-RUN easy_install supervisor
 
 CMD ["/bin/bash"]
