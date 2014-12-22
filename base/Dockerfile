@@ -18,4 +18,6 @@ RUN apt-get -yq update && apt-get -yq install \
     procps supervisor \
     && apt-get clean
 
+RUN sed -i -e 's/\[supervisord\]/\[supervisord\]\nnodaemon=true/' /etc/supervisor/supervisord.conf
+
 CMD ["/bin/bash"]

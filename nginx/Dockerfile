@@ -1,5 +1,5 @@
 # Pull base image.
-FROM bradegler/base
+FROM bradegler/base-ubuntu
 
 # Install Nginx.
 RUN \
@@ -10,6 +10,12 @@ RUN \
   echo "\ndaemon off;" >> /etc/nginx/nginx.conf && \
   chown -R www-data:www-data /var/lib/nginx
 
+# Configure supervisord to run nginx
+RUN echo "[program:nginx]" > /etc/supervisor/conf.d/nginx.conf && \
+    echo "command = /usr/sbin/nginx" >> /etc/supervisor/conf.d/nginx.conf && \
+    echo "user = root" >> /etc/supervisor/conf.d/nginx.conf && \
+    echo "autostart = true" >> /etc/supervisor/conf.d/nginx.conf
+
 # Define mountable directories.
 VOLUME ["/etc/nginx/sites-enabled", "/etc/nginx/certs", "/etc/nginx/conf.d", "/var/log/nginx", "/usr/share/nginx/html"]
 
@@ -17,7 +23,7 @@ VOLUME ["/etc/nginx/sites-enabled", "/etc/nginx/certs", "/etc/nginx/conf.d", "/v
 WORKDIR /etc/nginx
 
 # Define default command.
-CMD ["nginx"]
+CMD ["/usr/bin/supervisord"]
 
 # Expose ports.
 EXPOSE 80
