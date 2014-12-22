@@ -9,8 +9,6 @@ fi
 
 /usr/bin/mysqld_safe &
 
-echo Using password $MYSQL_ROOT_PASSWORD
-
 mysqladmin --wait=10 -u root password $MYSQL_ROOT_PASSWORD
 mysql -uroot -p$MYSQL_ROOT_PASSWORD -e "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '$MYSQL_ROOT_PASSWORD' WITH GRANT OPTION; FLUSH PRIVILEGES;"
 
