@@ -1,4 +1,4 @@
-FROM bradegler/base
+FROM bradegler/base-ubuntu
 MAINTAINER Brad Egler "begler@gmail.com"
 
 RUN \
