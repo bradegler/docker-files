@@ -8,10 +8,10 @@ RUN wget http://downloads.typesafe.com/typesafe-activator/1.2.12/typesafe-activa
     mv activator-1.2.12 /usr/local/lib && \
     ln -s /usr/local/lib/activator-1.2.12/activator /usr/local/bin/activator
 
-RUN wget http://downloads.typesafe.com/scala/2.11.4/scala-2.11.4.tgz && \
-    tar xvzf scala-2.11.4.tgz && \
-    rm scala-2.11.4.tgz && \
-    mv scala-2.11.4 /usr/local/lib/
+RUN wget http://downloads.typesafe.com/scala/2.11.5/scala-2.11.5.tgz && \
+    tar xvzf scala-2.11.5.tgz && \
+    rm scala-2.11.5.tgz && \
+    mv scala-2.11.5 /usr/local/lib/
 
 RUN wget https://dl.bintray.com/sbt/debian/sbt-0.13.7.deb && \
     dpkg -i sbt-0.13.7.deb && \
