@@ -14,7 +14,7 @@ RUN \
   rm -rf /tmp/node-v* && \
   echo '\n# Node.js\nexport PATH="node_modules/.bin:$PATH"' >> /root/.bash_profile
 
-RUN npm install -g grunt gulp ember-cli broccoli-cli
+RUN npm install -g grunt gulp ember-cli broccoli-cli bower phantomjs wscat
 
 # Define mountable directories.
 VOLUME ["/data"]
